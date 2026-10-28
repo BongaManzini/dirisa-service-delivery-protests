@@ -1,13 +1,13 @@
-# 🇿🇦 StrikePulse SA: Does Strikes & Public Protest Have a Relation With Service Delivery?
+# StrikePulse SA: Does Strikes & Public Protest Have a Relation With Service Delivery?
 
-> **DIRISA National Student Datathon Research Project**  
-> **Challenge:** Using the data provided by publicly available sites, try to figure out if there is a relationship between public protests and service delivery in South Africa.  
-> **Deliverable:** An empirical data science research platform and interactive diagnostic tool analyzing correlation across South African metros and local councils.  
+> **DIRISA National Student Datathon Research Project** 
+> **Challenge:** Using the data provided by publicly available sites, try to figure out if there is a relationship between public protests and service delivery in South Africa. 
+> **Deliverable:** An empirical data science research platform and interactive diagnostic tool analyzing correlation across South African metros and local councils. 
 > **Author:** Bonga Manzini (UNISA BSc Informatics Student)
 
 ---
 
-## 📖 The Story Behind This Study
+## The Story Behind This Study
 
 Whenever there is a public protest on the news in South Africa, you'll hear two opposing stories:
 1. Politicians sometimes say: *"These protests are purely criminal or politically organized by opponents."*
@@ -17,7 +17,7 @@ For the **DIRISA Datathon**, I wanted to move past opinions and look at the actu
 
 ---
 
-## 🔍 Core Findings (In Plain English)
+## Core Findings (In Plain English)
 
 1. **Yes, there is a strong direct relationship ($r = +0.88$ for water):**
    - Municipalities where water failure exceeds 30% experience over **4.5x more public strikes per capita** compared to stable municipalities.
@@ -28,7 +28,7 @@ For the **DIRISA Datathon**, I wanted to move past opinions and look at the actu
 
 ---
 
-## 🔬 The 11 Research Questions (Dossier)
+## The 11 Research Questions (Dossier)
 
 - **Who:** Municipal managers, CoGTA policy planners, SALGA analysts, civic leaders, and South African citizens.
 - **Where:** Across all 8 South African Metros (Joburg, Cape Town, eThekwini, Tshwane, Ekurhuleni, Mangaung, Nelson Mandela Bay, Buffalo City) and heavily distressed local municipalities (Emfuleni, Ditsobotla, Maluti-a-Phofung, Polokwane).
@@ -44,7 +44,7 @@ For the **DIRISA Datathon**, I wanted to move past opinions and look at the actu
 
 ---
 
-## 🚀 Running the Project Locally
+## Running the Project Locally
 
 ### 1. View the Interactive Web Platform
 Open `index.html` directly in your browser or serve it using Python:
@@ -60,7 +60,7 @@ python3 protest_service_delivery_analysis.py
 
 ---
 
-## 🤝 Contributing & Pull Requests
+## Contributing & Pull Requests
 
 Student collaboration is very welcome! If you want to add more municipal wards, refine regression models, or contribute historical strike data:
 1. Fork this repository.

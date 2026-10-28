@@ -1,540 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StrikePulse SA | DIRISA Datathon Research Study</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#f0fdf4',
-              500: '#22c55e',
-              600: '#16a34a',
-              900: '#14532d',
-            }
-          }
-        }
-      }
-    }
-  </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>StrikePulse SA | DIRISA Datathon Research Study</title>
+ <!-- Tailwind CSS CDN -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Lucide Icons -->
+ <script src="https://unpkg.com/lucide@latest"></script>
+ <!-- Chart.js -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ brand: {
+ 50: '#f0fdf4',
+ 500: '#22c55e',
+ 600: '#16a34a',
+ 900: '#14532d',
+ }
+ }
+ }
+ }
+ }
+ </script>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-emerald-500 selection:text-black">
 
-  <!-- Header -->
-  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-xl text-slate-950 font-black shadow-lg shadow-emerald-500/20">
-          <i data-lucide="activity" class="w-6 h-6 text-black"></i>
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <h1 class="text-xl font-bold tracking-tight text-white">StrikePulse SA</h1>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium">DIRISA Datathon 2026</span>
-          </div>
-          <p class="text-xs text-slate-400">Empirical Research: Does Strikes & Public Protest Have a Relation With Service Delivery in South Africa?</p>
-        </div>
-      </div>
-      <div class="flex items-center gap-3 text-xs">
-        <a href="#dossier" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Research Dossier</a>
-        <a href="#simulator" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Hypothesis Simulator</a>
-        <a href="#data-table" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition shadow-sm">Explore Municipalities</a>
-      </div>
-    </div>
-  </header>
+ <!-- Header -->
+ <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-40">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+ <div class="flex items-center gap-3">
+ <div class="p-2.5 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-xl text-slate-950 font-black shadow-lg shadow-emerald-500/20">
+ <i data-lucide="activity" class="w-6 h-6 text-black"></i>
+ </div>
+ <div>
+ <div class="flex items-center gap-2">
+ <h1 class="text-xl font-bold tracking-tight text-white">StrikePulse SA</h1>
+ <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium">DIRISA Datathon 2026</span>
+ </div>
+ <p class="text-xs text-slate-400">Empirical Research: Does Strikes & Public Protest Have a Relation With Service Delivery in South Africa?</p>
+ </div>
+ </div>
+ <div class="flex items-center gap-3 text-xs">
+ <a href="#dossier" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Research Dossier</a>
+ <a href="#simulator" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Hypothesis Simulator</a>
+ <a href="#data-table" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition shadow-sm">Explore Municipalities</a>
+ </div>
+ </div>
+ </header>
 
-  <!-- Hero Section -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-    
-    <!-- Student Voice Research Callout -->
-    <div class="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 p-6 sm:p-8">
-      <div class="max-w-3xl space-y-4">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
-          <i data-lucide="award" class="w-4 h-4"></i>
-          DIRISA Student Datathon Research Project
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Do public strikes erupt because taps are dry, or are other factors driving community unrest?
-        </h2>
-        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-          As a UNISA Informatics student, I set out to answer this question without rhetoric or speculation. 
-          By combining publicly available audited data from <strong>Stats SA (Non-Financial Census of Municipalities)</strong>, 
-          the <strong>Municipal IQ Protest Monitor</strong>, and <strong>National Treasury Section 71 expenditure reports</strong>, 
-          this platform tests the statistical relationship between municipal service delivery breakdowns and community protests across South African metros and local councils.
-        </p>
-      </div>
+ <!-- Hero Section -->
+ <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+ 
+ <!-- Student Voice Research Callout -->
+ <div class="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 p-6 sm:p-8">
+ <div class="max-w-3xl space-y-4">
+ <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
+ <i data-lucide="award" class="w-4 h-4"></i>
+ DIRISA Student Datathon Research Project
+ </div>
+ <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+ Do public strikes erupt because taps are dry, or are other factors driving community unrest?
+ </h2>
+ <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+ As a UNISA Informatics student, I set out to answer this question without rhetoric or speculation. 
+ By combining publicly available audited data from <strong>Stats SA (Non-Financial Census of Municipalities)</strong>, 
+ the <strong>Municipal IQ Protest Monitor</strong>, and <strong>National Treasury Section 71 expenditure reports</strong>, 
+ this platform tests the statistical relationship between municipal service delivery breakdowns and community protests across South African metros and local councils.
+ </p>
+ </div>
 
-      <!-- Key Stat Cards -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
-            <i data-lucide="droplet" class="w-4 h-4 text-cyan-400"></i> Water Backlog Correlation
-          </div>
-          <div class="mt-2 text-2xl font-bold text-white">r = +0.88</div>
-          <p class="text-xs text-emerald-400 font-medium mt-1">Strong statistical correlation</p>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
-            <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> Electricity Blackouts
-          </div>
-          <div class="mt-2 text-2xl font-bold text-white">r = +0.91</div>
-          <p class="text-xs text-amber-400 font-medium mt-1">Severe road blockage catalyst</p>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
-            <i data-lucide="wallet" class="w-4 h-4 text-rose-400"></i> Capital Underspending
-          </div>
-          <div class="mt-2 text-2xl font-bold text-white">r = +0.93</div>
-          <p class="text-xs text-rose-400 font-medium mt-1">Unspent grants trigger anger</p>
-        </div>
-        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
-          <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
-            <i data-lucide="alert-triangle" class="w-4 h-4 text-orange-400"></i> Crisis Multiplier
-          </div>
-          <div class="mt-2 text-2xl font-bold text-white">4.5x</div>
-          <p class="text-xs text-orange-400 font-medium mt-1">More strikes in high-backlog councils</p>
-        </div>
-      </div>
-    </div>
+ <!-- Key Stat Cards -->
+ <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+ <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+ <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
+ <i data-lucide="droplet" class="w-4 h-4 text-cyan-400"></i> Water Backlog Correlation
+ </div>
+ <div class="mt-2 text-2xl font-bold text-white">r = +0.88</div>
+ <p class="text-xs text-emerald-400 font-medium mt-1">Strong statistical correlation</p>
+ </div>
+ <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+ <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
+ <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> Electricity Blackouts
+ </div>
+ <div class="mt-2 text-2xl font-bold text-white">r = +0.91</div>
+ <p class="text-xs text-amber-400 font-medium mt-1">Severe road blockage catalyst</p>
+ </div>
+ <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+ <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
+ <i data-lucide="wallet" class="w-4 h-4 text-rose-400"></i> Capital Underspending
+ </div>
+ <div class="mt-2 text-2xl font-bold text-white">r = +0.93</div>
+ <p class="text-xs text-rose-400 font-medium mt-1">Unspent grants trigger anger</p>
+ </div>
+ <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800/80">
+ <div class="text-xs font-medium text-slate-400 flex items-center gap-1.5">
+ <i data-lucide="alert-triangle" class="w-4 h-4 text-orange-400"></i> Crisis Multiplier
+ </div>
+ <div class="mt-2 text-2xl font-bold text-white">4.5x</div>
+ <p class="text-xs text-orange-400 font-medium mt-1">More strikes in high-backlog councils</p>
+ </div>
+ </div>
+ </div>
 
-    <!-- Interactive Correlation Chart Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-      <div class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-4">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div>
-            <h3 class="text-lg font-bold text-white">Empirical Correlation Curve</h3>
-            <p class="text-xs text-slate-400">Select a municipal service metric to visualize its relationship with protest frequency per 100k residents.</p>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="updateChart('water')" id="btn-water" class="px-3 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium">Water</button>
-            <button onclick="updateChart('electricity')" id="btn-electricity" class="px-3 py-1 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Electricity</button>
-            <button onclick="updateChart('underspent')" id="btn-underspent" class="px-3 py-1 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Budget Underspent</button>
-          </div>
-        </div>
-        <div class="h-80 w-full relative">
-          <canvas id="correlationChart"></canvas>
-        </div>
-        <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-300 leading-relaxed" id="chartExplanation">
-          Water outages have an $R^2 = 0.7774$. In councils like Ditsobotla and Maluti-a-Phofung where over 40% of households lack reliable piped water, protest frequency reaches historic highs (> 7 strikes per 100k people).
-        </div>
-      </div>
+ <!-- Interactive Correlation Chart Section -->
+ <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+ <div class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-4">
+ <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+ <div>
+ <h3 class="text-lg font-bold text-white">Empirical Correlation Curve</h3>
+ <p class="text-xs text-slate-400">Select a municipal service metric to visualize its relationship with protest frequency per 100k residents.</p>
+ </div>
+ <div class="flex items-center gap-2">
+ <button onclick="updateChart('water')" id="btn-water" class="px-3 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium">Water</button>
+ <button onclick="updateChart('electricity')" id="btn-electricity" class="px-3 py-1 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Electricity</button>
+ <button onclick="updateChart('underspent')" id="btn-underspent" class="px-3 py-1 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700">Budget Underspent</button>
+ </div>
+ </div>
+ <div class="h-80 w-full relative">
+ <canvas id="correlationChart"></canvas>
+ </div>
+ <div class="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-300 leading-relaxed" id="chartExplanation">
+ Water outages have an $R^2 = 0.7774$. In councils like Ditsobotla and Maluti-a-Phofung where over 40% of households lack reliable piped water, protest frequency reaches historic highs (> 7 strikes per 100k people).
+ </div>
+ </div>
 
-      <!-- Hypothesis Simulator -->
-      <div id="simulator" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-5">
-        <div>
-          <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Interactive Model</span>
-          <h3 class="text-lg font-bold text-white mt-1">Hypothesis Simulator</h3>
-          <p class="text-xs text-slate-400 mt-1">Adjust municipal failure variables to compute predicted community protest risk.</p>
-        </div>
+ <!-- Hypothesis Simulator -->
+ <div id="simulator" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-5">
+ <div>
+ <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Interactive Model</span>
+ <h3 class="text-lg font-bold text-white mt-1">Hypothesis Simulator</h3>
+ <p class="text-xs text-slate-400 mt-1">Adjust municipal failure variables to compute predicted community protest risk.</p>
+ </div>
 
-        <div class="space-y-4 text-xs">
-          <div>
-            <div class="flex justify-between font-medium mb-1.5">
-              <span>Water Backlog %</span>
-              <span id="lbl-water" class="text-cyan-400 font-bold">25%</span>
-            </div>
-            <input type="range" id="rng-water" min="0" max="60" value="25" class="w-full accent-emerald-500 cursor-pointer" oninput="runSimulation()">
-          </div>
+ <div class="space-y-4 text-xs">
+ <div>
+ <div class="flex justify-between font-medium mb-1.5">
+ <span>Water Backlog %</span>
+ <span id="lbl-water" class="text-cyan-400 font-bold">25%</span>
+ </div>
+ <input type="range" id="rng-water" min="0" max="60" value="25" class="w-full accent-emerald-500 cursor-pointer" oninput="runSimulation()">
+ </div>
 
-          <div>
-            <div class="flex justify-between font-medium mb-1.5">
-              <span>Monthly Outage Hours (Power)</span>
-              <span id="lbl-power" class="text-amber-400 font-bold">45 hrs</span>
-            </div>
-            <input type="range" id="rng-power" min="0" max="150" value="45" class="w-full accent-emerald-500 cursor-pointer" oninput="runSimulation()">
-          </div>
+ <div>
+ <div class="flex justify-between font-medium mb-1.5">
+ <span>Monthly Outage Hours (Power)</span>
+ <span id="lbl-power" class="text-amber-400 font-bold">45 hrs</span>
+ </div>
+ <input type="range" id="rng-power" min="0" max="150" value="45" class="w-full accent-emerald-500 cursor-pointer" oninput="runSimulation()">
+ </div>
 
-          <div>
-            <div class="flex justify-between font-medium mb-1.5">
-              <span>Capital Budget Underspent %</span>
-              <span id="lbl-budget" class="text-rose-400 font-bold">20%</span>
-            </div>
-            <input type="range" id="rng-budget" min="0" max="60" value="20" class="w-full accent-emerald-500 cursor-pointer" oninput="runSimulation()">
-          </div>
-        </div>
+ <div>
+ <div class="flex justify-between font-medium mb-1.5">
+ <span>Capital Budget Underspent %</span>
+ <span id="lbl-budget" class="text-rose-400 font-bold">20%</span>
+ </div>
+ <input type="range" id="rng-budget" min="0" max="60" value="20" class="w-full accent-emerald-500 cursor-pointer" oninput="runSimulation()">
+ </div>
+ </div>
 
-        <!-- Simulation Output Box -->
-        <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
-          <div class="text-xs text-slate-400">Predicted Protests Per 100k:</div>
-          <div class="text-3xl font-extrabold text-white flex items-baseline gap-2">
-            <span id="sim-protest-score">2.14</span>
-            <span class="text-xs font-normal text-slate-400">strikes / 100k / yr</span>
-          </div>
+ <!-- Simulation Output Box -->
+ <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+ <div class="text-xs text-slate-400">Predicted Protests Per 100k:</div>
+ <div class="text-3xl font-extrabold text-white flex items-baseline gap-2">
+ <span id="sim-protest-score">2.14</span>
+ <span class="text-xs font-normal text-slate-400">strikes / 100k / yr</span>
+ </div>
 
-          <div>
-            <div class="text-xs text-slate-400 mb-1">Predicted Escalation to Violence:</div>
-            <div class="w-full bg-slate-800 rounded-full h-2">
-              <div id="sim-violence-bar" class="bg-amber-500 h-2 rounded-full" style="width: 62%"></div>
-            </div>
-            <div class="text-right text-[11px] font-bold text-amber-400 mt-1" id="sim-violence-pct">62% Probability</div>
-          </div>
+ <div>
+ <div class="text-xs text-slate-400 mb-1">Predicted Escalation to Violence:</div>
+ <div class="w-full bg-slate-800 rounded-full h-2">
+ <div id="sim-violence-bar" class="bg-amber-500 h-2 rounded-full" style="width: 62%"></div>
+ </div>
+ <div class="text-right text-[11px] font-bold text-amber-400 mt-1" id="sim-violence-pct">62% Probability</div>
+ </div>
 
-          <div class="text-xs p-2.5 rounded-lg bg-slate-900 border border-slate-800/80 text-slate-300" id="sim-recommendation">
-            ⚠️ <strong>Advisory:</strong> High risk zone. Prioritize emergency water tanker deployment and unblock infrastructure contractor payments.
-          </div>
-        </div>
-      </div>
-    </div>
+ <div class="text-xs p-2.5 rounded-lg bg-slate-900 border border-slate-800/80 text-slate-300" id="sim-recommendation">
+ ️ <strong>Advisory:</strong> High risk zone. Prioritize emergency water tanker deployment and unblock infrastructure contractor payments.
+ </div>
+ </div>
+ </div>
+ </div>
 
-    <!-- 11-Point Research Dossier Section -->
-    <section id="dossier" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-8">
-      <div class="border-b border-slate-800 pb-4">
-        <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Academic Rigor & Student Methodology</span>
-        <h3 class="text-2xl font-bold text-white mt-1">🔬 Research Dossier: The 11 Core Questions</h3>
-        <p class="text-xs sm:text-sm text-slate-400 mt-1">Detailed breakdown of why I started this study, how the data was gathered, and what the real results mean for South Africa.</p>
-      </div>
+ <!-- 11-Point Research Dossier Section -->
+ <section id="dossier" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-8">
+ <div class="border-b border-slate-800 pb-4">
+ <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Academic Rigor & Student Methodology</span>
+ <h3 class="text-2xl font-bold text-white mt-1"> Research Dossier: The 11 Core Questions</h3>
+ <p class="text-xs sm:text-sm text-slate-400 mt-1">Detailed breakdown of why I started this study, how the data was gathered, and what the real results mean for South Africa.</p>
+ </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="help-circle" class="w-4 h-4"></i> 1. Who is this research for?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Local municipal managers, the Department of Cooperative Governance and Traditional Affairs (CoGTA), researchers at SALGA, civic activist groups, and voters who want factual, non-partisan evidence on why protests occur.
-          </p>
-        </div>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="help-circle" class="w-4 h-4"></i> 1. Who is this research for?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Local municipal managers, the Department of Cooperative Governance and Traditional Affairs (CoGTA), researchers at SALGA, civic activist groups, and voters who want factual, non-partisan evidence on why protests occur.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="map-pin" class="w-4 h-4"></i> 2. Where did this study focus?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Across South Africa's 8 metropolitan councils (Joburg, Cape Town, eThekwini, Tshwane, Ekurhuleni, Mangaung, Nelson Mandela Bay, Buffalo City) and heavily distressed local councils (Emfuleni, Ditsobotla, Maluti-a-Phofung).
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="map-pin" class="w-4 h-4"></i> 2. Where did this study focus?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Across South Africa's 8 metropolitan councils (Joburg, Cape Town, eThekwini, Tshwane, Ekurhuleni, Mangaung, Nelson Mandela Bay, Buffalo City) and heavily distressed local councils (Emfuleni, Ditsobotla, Maluti-a-Phofung).
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="compass" class="w-4 h-4"></i> 3. Why did I study this?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            In news broadcasts, politicians often claim protests are purely politically orchestrated sabotage, while community leaders state they are desperate cries for basic human dignity. I wanted to see if the statistical data backs up the service delivery hypothesis.
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="compass" class="w-4 h-4"></i> 3. Why did I study this?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ In news broadcasts, politicians often claim protests are purely politically orchestrated sabotage, while community leaders state they are desperate cries for basic human dignity. I wanted to see if the statistical data backs up the service delivery hypothesis.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="cpu" class="w-4 h-4"></i> 4. How did I analyze the data?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            I built a Python data processing script using Pearson ($r$) correlation and Ordinary Least Squares (OLS) linear regression. I calculated protest frequencies normalized per 100,000 residents to avoid population skew between large metros and small towns.
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="cpu" class="w-4 h-4"></i> 4. How did I analyze the data?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ I built a Python data processing script using Pearson ($r$) correlation and Ordinary Least Squares (OLS) linear regression. I calculated protest frequencies normalized per 100,000 residents to avoid population skew between large metros and small towns.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="calendar" class="w-4 h-4"></i> 5. When was this data sampled?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Multi-year audit tracking 2018 through 2025, capturing trends through the 2021 municipal elections, post-COVID service shocks, and the 2024 national elections.
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="calendar" class="w-4 h-4"></i> 5. When was this data sampled?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Multi-year audit tracking 2018 through 2025, capturing trends through the 2021 municipal elections, post-COVID service shocks, and the 2024 national elections.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="file-text" class="w-4 h-4"></i> 6. What is the Problem Statement?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Does the collapse of basic municipal services (water, sanitation, electricity, and refuse) directly predict community strike action, or do strikes occur independently due to unemployment and political factionalism?
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="file-text" class="w-4 h-4"></i> 6. What is the Problem Statement?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Does the collapse of basic municipal services (water, sanitation, electricity, and refuse) directly predict community strike action, or do strikes occur independently due to unemployment and political factionalism?
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="database" class="w-4 h-4"></i> 7. What data was sourced?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            1. Stats SA Non-Financial Census of Municipalities (NFCM)<br>
-            2. Municipal IQ Hotspots Monitor & ISS Protest Database<br>
-            3. National Treasury Local Government Section 71 Budget Statements<br>
-            4. Auditor-General Consolidated General Report on Audit Outcomes
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="database" class="w-4 h-4"></i> 7. What data was sourced?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ 1. Stats SA Non-Financial Census of Municipalities (NFCM)<br>
+ 2. Municipal IQ Hotspots Monitor & ISS Protest Database<br>
+ 3. National Treasury Local Government Section 71 Budget Statements<br>
+ 4. Auditor-General Consolidated General Report on Audit Outcomes
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i> 8. Why did I choose this data?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            These sources are state-audited, independent, and legally verified. They eliminate social media echo chambers and partisan spin by relying on physical meter readings, census audits, and bank records.
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="check-circle-2" class="w-4 h-4"></i> 8. Why did I choose this data?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ These sources are state-audited, independent, and legally verified. They eliminate social media echo chambers and partisan spin by relying on physical meter readings, census audits, and bank records.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="git-merge" class="w-4 h-4"></i> 9. How did I work on it?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Cleaned and normalized heterogeneous tables from Stats SA and National Treasury, reconciled varying municipal boundary codes across demarcation board updates, and wrote mathematical modeling functions in Python.
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="git-merge" class="w-4 h-4"></i> 9. How did I work on it?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Cleaned and normalized heterogeneous tables from Stats SA and National Treasury, reconciled varying municipal boundary codes across demarcation board updates, and wrote mathematical modeling functions in Python.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="target" class="w-4 h-4"></i> 10. What do I plan to achieve?
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Create an early-warning diagnostic tool that helps municipalities identify service frustration hotspots before they boil over into burning barricades, saving infrastructure and restoring trust.
-          </p>
-        </div>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="target" class="w-4 h-4"></i> 10. What do I plan to achieve?
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Create an early-warning diagnostic tool that helps municipalities identify service frustration hotspots before they boil over into burning barricades, saving infrastructure and restoring trust.
+ </p>
+ </div>
 
-        <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2 md:col-span-2">
-          <div class="flex items-center gap-2 font-bold text-emerald-400">
-            <i data-lucide="trending-up" class="w-4 h-4"></i> 11. Market & Societal Understanding
-          </div>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Service delivery protests in South Africa cost billions in damaged public infrastructure (burnt train stations, damaged clinics, vandalized transformers). 
-            Our research shows that capital underspending ($r = 0.93$) is the ultimate trigger: communities feel insulted when councils hold billions in unspent infrastructure grants while taps remain dry. Addressing project execution is the single greatest deterrent to civil unrest.
-          </p>
-        </div>
-      </div>
-    </section>
+ <div class="p-4 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-2 md:col-span-2">
+ <div class="flex items-center gap-2 font-bold text-emerald-400">
+ <i data-lucide="trending-up" class="w-4 h-4"></i> 11. Market & Societal Understanding
+ </div>
+ <p class="text-slate-300 text-xs leading-relaxed">
+ Service delivery protests in South Africa cost billions in damaged public infrastructure (burnt train stations, damaged clinics, vandalized transformers). 
+ Our research shows that capital underspending ($r = 0.93$) is the ultimate trigger: communities feel insulted when councils hold billions in unspent infrastructure grants while taps remain dry. Addressing project execution is the single greatest deterrent to civil unrest.
+ </p>
+ </div>
+ </div>
+ </section>
 
-    <!-- Municipal Data Explorer Table -->
-    <section id="data-table" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div>
-          <h3 class="text-xl font-bold text-white">South African Municipal Data Explorer</h3>
-          <p class="text-xs text-slate-400 mt-0.5">Filter by province or search to inspect municipal service failure rates and protest metrics.</p>
-        </div>
-        <div class="flex items-center gap-3 w-full sm:w-auto">
-          <input type="text" id="searchInput" placeholder="Search municipality..." oninput="filterTable()" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 w-full sm:w-48">
-          <select id="provinceFilter" onchange="filterTable()" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
-            <option value="ALL">All Provinces</option>
-            <option value="Gauteng">Gauteng</option>
-            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
-            <option value="Western Cape">Western Cape</option>
-            <option value="Eastern Cape">Eastern Cape</option>
-            <option value="Free State">Free State</option>
-            <option value="North West">North West</option>
-            <option value="Limpopo">Limpopo</option>
-          </select>
-        </div>
-      </div>
+ <!-- Municipal Data Explorer Table -->
+ <section id="data-table" class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 space-y-6">
+ <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+ <div>
+ <h3 class="text-xl font-bold text-white">South African Municipal Data Explorer</h3>
+ <p class="text-xs text-slate-400 mt-0.5">Filter by province or search to inspect municipal service failure rates and protest metrics.</p>
+ </div>
+ <div class="flex items-center gap-3 w-full sm:w-auto">
+ <input type="text" id="searchInput" placeholder="Search municipality..." oninput="filterTable()" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 w-full sm:w-48">
+ <select id="provinceFilter" onchange="filterTable()" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-200 focus:outline-none focus:border-emerald-500">
+ <option value="ALL">All Provinces</option>
+ <option value="Gauteng">Gauteng</option>
+ <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+ <option value="Western Cape">Western Cape</option>
+ <option value="Eastern Cape">Eastern Cape</option>
+ <option value="Free State">Free State</option>
+ <option value="North West">North West</option>
+ <option value="Limpopo">Limpopo</option>
+ </select>
+ </div>
+ </div>
 
-      <div class="overflow-x-auto rounded-xl border border-slate-800">
-        <table class="w-full text-left text-xs text-slate-300">
-          <thead class="bg-slate-950/80 text-slate-400 uppercase font-semibold border-b border-slate-800">
-            <tr>
-              <th class="p-3.5">Municipality</th>
-              <th class="p-3.5">Province</th>
-              <th class="p-3.5 text-right">Water Backlog</th>
-              <th class="p-3.5 text-right">Sanitation Backlog</th>
-              <th class="p-3.5 text-right">Power Outages</th>
-              <th class="p-3.5 text-right">Underspent Budget</th>
-              <th class="p-3.5 text-right">Protests / 100k</th>
-              <th class="p-3.5 text-center">Risk Level</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody" class="divide-y divide-slate-800/60 font-mono">
-            <!-- Populated via JS -->
-          </tbody>
-        </table>
-      </div>
-    </section>
+ <div class="overflow-x-auto rounded-xl border border-slate-800">
+ <table class="w-full text-left text-xs text-slate-300">
+ <thead class="bg-slate-950/80 text-slate-400 uppercase font-semibold border-b border-slate-800">
+ <tr>
+ <th class="p-3.5">Municipality</th>
+ <th class="p-3.5">Province</th>
+ <th class="p-3.5 text-right">Water Backlog</th>
+ <th class="p-3.5 text-right">Sanitation Backlog</th>
+ <th class="p-3.5 text-right">Power Outages</th>
+ <th class="p-3.5 text-right">Underspent Budget</th>
+ <th class="p-3.5 text-right">Protests / 100k</th>
+ <th class="p-3.5 text-center">Risk Level</th>
+ </tr>
+ </thead>
+ <tbody id="tableBody" class="divide-y divide-slate-800/60 font-mono">
+ <!-- Populated via JS -->
+ </tbody>
+ </table>
+ </div>
+ </section>
 
-  </main>
+ </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
-    <p>DIRISA National Student Datathon Research Project &bull; Built with pride by Bonga Manzini (UNISA Informatics)</p>
-    <p class="mt-1">Data sources: Stats SA (NFCM), Municipal IQ, National Treasury &bull; Code licensed under MIT</p>
-  </footer>
+ <!-- Footer -->
+ <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+ <p>DIRISA National Student Datathon Research Project &bull; Built with pride by Bonga Manzini (UNISA Informatics)</p>
+ <p class="mt-1">Data sources: Stats SA (NFCM), Municipal IQ, National Treasury &bull; Code licensed under MIT</p>
+ </footer>
 
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+ <script>
+ // Initialize Lucide icons
+ lucide.createIcons();
 
-    // Data set
-    const municipalData = [
-      { name: "City of Johannesburg", province: "Gauteng", water: 14.2, sanitation: 11.8, power: 48.5, underspent: 18.2, protestRate: 0.78, risk: "High" },
-      { name: "City of Tshwane", province: "Gauteng", water: 18.7, sanitation: 16.3, power: 62.0, underspent: 22.4, protestRate: 0.97, risk: "High" },
-      { name: "Ekurhuleni", province: "Gauteng", water: 12.5, sanitation: 10.2, power: 36.0, underspent: 14.1, protestRate: 0.76, risk: "Moderate" },
-      { name: "eThekwini", province: "KwaZulu-Natal", water: 28.4, sanitation: 24.1, power: 54.0, underspent: 26.5, protestRate: 1.37, risk: "Critical" },
-      { name: "City of Cape Town", province: "Western Cape", water: 4.8, sanitation: 6.2, power: 18.2, underspent: 7.5, protestRate: 0.40, risk: "Low" },
-      { name: "Nelson Mandela Bay", province: "Eastern Cape", water: 31.6, sanitation: 22.8, power: 42.0, underspent: 28.0, protestRate: 2.25, risk: "Critical" },
-      { name: "Mangaung", province: "Free State", water: 24.5, sanitation: 19.4, power: 58.0, underspent: 34.0, protestRate: 2.50, risk: "Critical" },
-      { name: "Buffalo City", province: "Eastern Cape", water: 21.0, sanitation: 18.0, power: 34.0, underspent: 19.5, protestRate: 1.85, risk: "Moderate" },
-      { name: "Emfuleni", province: "Gauteng", water: 38.2, sanitation: 39.5, power: 94.0, underspent: 42.0, protestRate: 4.28, risk: "Extreme" },
-      { name: "Ditsobotla", province: "North West", water: 44.0, sanitation: 41.0, power: 112.0, underspent: 51.0, protestRate: 7.70, risk: "Extreme" },
-      { name: "Maluti-a-Phofung", province: "Free State", water: 42.5, sanitation: 36.0, power: 105.0, underspent: 48.0, protestRate: 7.36, risk: "Extreme" },
-      { name: "Polokwane", province: "Limpopo", water: 26.0, sanitation: 21.0, power: 45.0, underspent: 21.0, protestRate: 1.71, risk: "Moderate" }
-    ];
+ // Data set
+ const municipalData = [
+ { name: "City of Johannesburg", province: "Gauteng", water: 14.2, sanitation: 11.8, power: 48.5, underspent: 18.2, protestRate: 0.78, risk: "High" },
+ { name: "City of Tshwane", province: "Gauteng", water: 18.7, sanitation: 16.3, power: 62.0, underspent: 22.4, protestRate: 0.97, risk: "High" },
+ { name: "Ekurhuleni", province: "Gauteng", water: 12.5, sanitation: 10.2, power: 36.0, underspent: 14.1, protestRate: 0.76, risk: "Moderate" },
+ { name: "eThekwini", province: "KwaZulu-Natal", water: 28.4, sanitation: 24.1, power: 54.0, underspent: 26.5, protestRate: 1.37, risk: "Critical" },
+ { name: "City of Cape Town", province: "Western Cape", water: 4.8, sanitation: 6.2, power: 18.2, underspent: 7.5, protestRate: 0.40, risk: "Low" },
+ { name: "Nelson Mandela Bay", province: "Eastern Cape", water: 31.6, sanitation: 22.8, power: 42.0, underspent: 28.0, protestRate: 2.25, risk: "Critical" },
+ { name: "Mangaung", province: "Free State", water: 24.5, sanitation: 19.4, power: 58.0, underspent: 34.0, protestRate: 2.50, risk: "Critical" },
+ { name: "Buffalo City", province: "Eastern Cape", water: 21.0, sanitation: 18.0, power: 34.0, underspent: 19.5, protestRate: 1.85, risk: "Moderate" },
+ { name: "Emfuleni", province: "Gauteng", water: 38.2, sanitation: 39.5, power: 94.0, underspent: 42.0, protestRate: 4.28, risk: "Extreme" },
+ { name: "Ditsobotla", province: "North West", water: 44.0, sanitation: 41.0, power: 112.0, underspent: 51.0, protestRate: 7.70, risk: "Extreme" },
+ { name: "Maluti-a-Phofung", province: "Free State", water: 42.5, sanitation: 36.0, power: 105.0, underspent: 48.0, protestRate: 7.36, risk: "Extreme" },
+ { name: "Polokwane", province: "Limpopo", water: 26.0, sanitation: 21.0, power: 45.0, underspent: 21.0, protestRate: 1.71, risk: "Moderate" }
+ ];
 
-    // Populate Table
-    function renderTable(data) {
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = "";
-      data.forEach(item => {
-        let badgeColor = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
-        if (item.risk === "Extreme") badgeColor = "bg-rose-500/10 text-rose-400 border-rose-500/30";
-        else if (item.risk === "Critical") badgeColor = "bg-orange-500/10 text-orange-400 border-orange-500/30";
-        else if (item.risk === "High") badgeColor = "bg-amber-500/10 text-amber-400 border-amber-500/30";
-        else if (item.risk === "Moderate") badgeColor = "bg-blue-500/10 text-blue-400 border-blue-500/30";
+ // Populate Table
+ function renderTable(data) {
+ const tbody = document.getElementById("tableBody");
+ tbody.innerHTML = "";
+ data.forEach(item => {
+ let badgeColor = "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
+ if (item.risk === "Extreme") badgeColor = "bg-rose-500/10 text-rose-400 border-rose-500/30";
+ else if (item.risk === "Critical") badgeColor = "bg-orange-500/10 text-orange-400 border-orange-500/30";
+ else if (item.risk === "High") badgeColor = "bg-amber-500/10 text-amber-400 border-amber-500/30";
+ else if (item.risk === "Moderate") badgeColor = "bg-blue-500/10 text-blue-400 border-blue-500/30";
 
-        const tr = document.createElement("tr");
-        tr.className = "hover:bg-slate-900/60 transition";
-        tr.innerHTML = `
-          <td class="p-3.5 font-semibold font-sans text-white">${item.name}</td>
-          <td class="p-3.5 font-sans text-slate-400">${item.province}</td>
-          <td class="p-3.5 text-right">${item.water}%</td>
-          <td class="p-3.5 text-right">${item.sanitation}%</td>
-          <td class="p-3.5 text-right">${item.power} hrs</td>
-          <td class="p-3.5 text-right text-rose-400">${item.underspent}%</td>
-          <td class="p-3.5 text-right font-bold text-white">${item.protestRate.toFixed(2)}</td>
-          <td class="p-3.5 text-center font-sans">
-            <span class="px-2 py-0.5 rounded-full border text-[10px] font-semibold ${badgeColor}">${item.risk}</span>
-          </td>
-        `;
-        tbody.appendChild(tr);
-      });
-    }
+ const tr = document.createElement("tr");
+ tr.className = "hover:bg-slate-900/60 transition";
+ tr.innerHTML = `
+ <td class="p-3.5 font-semibold font-sans text-white">${item.name}</td>
+ <td class="p-3.5 font-sans text-slate-400">${item.province}</td>
+ <td class="p-3.5 text-right">${item.water}%</td>
+ <td class="p-3.5 text-right">${item.sanitation}%</td>
+ <td class="p-3.5 text-right">${item.power} hrs</td>
+ <td class="p-3.5 text-right text-rose-400">${item.underspent}%</td>
+ <td class="p-3.5 text-right font-bold text-white">${item.protestRate.toFixed(2)}</td>
+ <td class="p-3.5 text-center font-sans">
+ <span class="px-2 py-0.5 rounded-full border text-[10px] font-semibold ${badgeColor}">${item.risk}</span>
+ </td>
+ `;
+ tbody.appendChild(tr);
+ });
+ }
 
-    function filterTable() {
-      const q = document.getElementById("searchInput").value.toLowerCase();
-      const prov = document.getElementById("provinceFilter").value;
-      const filtered = municipalData.filter(item => {
-        const matchName = item.name.toLowerCase().includes(q) || item.province.toLowerCase().includes(q);
-        const matchProv = prov === "ALL" || item.province === prov;
-        return matchName && matchProv;
-      });
-      renderTable(filtered);
-    }
+ function filterTable() {
+ const q = document.getElementById("searchInput").value.toLowerCase();
+ const prov = document.getElementById("provinceFilter").value;
+ const filtered = municipalData.filter(item => {
+ const matchName = item.name.toLowerCase().includes(q) || item.province.toLowerCase().includes(q);
+ const matchProv = prov === "ALL" || item.province === prov;
+ return matchName && matchProv;
+ });
+ renderTable(filtered);
+ }
 
-    // Chart.js Configuration
-    let chartInstance = null;
-    function initChart(mode = 'water') {
-      const ctx = document.getElementById('correlationChart').getContext('2d');
-      
-      let metricName = "Water Backlog %";
-      let xVals = municipalData.map(d => d.water);
-      let scatterData = municipalData.map(d => ({ x: d.water, y: d.protestRate, name: d.name }));
-      let lineColor = '#06b6d4';
+ // Chart.js Configuration
+ let chartInstance = null;
+ function initChart(mode = 'water') {
+ const ctx = document.getElementById('correlationChart').getContext('2d');
+ 
+ let metricName = "Water Backlog %";
+ let xVals = municipalData.map(d => d.water);
+ let scatterData = municipalData.map(d => ({ x: d.water, y: d.protestRate, name: d.name }));
+ let lineColor = '#06b6d4';
 
-      if (mode === 'electricity') {
-        metricName = "Electricity Outage (Monthly Hours)";
-        xVals = municipalData.map(d => d.power);
-        scatterData = municipalData.map(d => ({ x: d.power, y: d.protestRate, name: d.name }));
-        lineColor = '#f59e0b';
-      } else if (mode === 'underspent') {
-        metricName = "Capital Budget Underspent %";
-        xVals = municipalData.map(d => d.underspent);
-        scatterData = municipalData.map(d => ({ x: d.underspent, y: d.protestRate, name: d.name }));
-        lineColor = '#f43f5e';
-      }
+ if (mode === 'electricity') {
+ metricName = "Electricity Outage (Monthly Hours)";
+ xVals = municipalData.map(d => d.power);
+ scatterData = municipalData.map(d => ({ x: d.power, y: d.protestRate, name: d.name }));
+ lineColor = '#f59e0b';
+ } else if (mode === 'underspent') {
+ metricName = "Capital Budget Underspent %";
+ xVals = municipalData.map(d => d.underspent);
+ scatterData = municipalData.map(d => ({ x: d.underspent, y: d.protestRate, name: d.name }));
+ lineColor = '#f43f5e';
+ }
 
-      if (chartInstance) chartInstance.destroy();
+ if (chartInstance) chartInstance.destroy();
 
-      chartInstance = new Chart(ctx, {
-        type: 'scatter',
-        data: {
-          datasets: [{
-            label: 'Municipal Observations',
-            data: scatterData,
-            backgroundColor: lineColor,
-            borderColor: lineColor,
-            pointRadius: 6,
-            pointHoverRadius: 8
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { labels: { color: '#94a3b8', font: { size: 11 } } },
-            tooltip: {
-              callbacks: {
-                label: function(context) {
-                  const d = context.raw;
-                  return `${d.name}: ${metricName} = ${d.x}, Protests/100k = ${d.y}`;
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              title: { display: true, text: metricName, color: '#94a3b8' },
-              grid: { color: '#1e293b' },
-              ticks: { color: '#64748b' }
-            },
-            y: {
-              title: { display: true, text: 'Annual Protests per 100k Citizens', color: '#94a3b8' },
-              grid: { color: '#1e293b' },
-              ticks: { color: '#64748b' }
-            }
-          }
-        }
-      });
-    }
+ chartInstance = new Chart(ctx, {
+ type: 'scatter',
+ data: {
+ datasets: [{
+ label: 'Municipal Observations',
+ data: scatterData,
+ backgroundColor: lineColor,
+ borderColor: lineColor,
+ pointRadius: 6,
+ pointHoverRadius: 8
+ }]
+ },
+ options: {
+ responsive: true,
+ maintainAspectRatio: false,
+ plugins: {
+ legend: { labels: { color: '#94a3b8', font: { size: 11 } } },
+ tooltip: {
+ callbacks: {
+ label: function(context) {
+ const d = context.raw;
+ return `${d.name}: ${metricName} = ${d.x}, Protests/100k = ${d.y}`;
+ }
+ }
+ }
+ },
+ scales: {
+ x: {
+ title: { display: true, text: metricName, color: '#94a3b8' },
+ grid: { color: '#1e293b' },
+ ticks: { color: '#64748b' }
+ },
+ y: {
+ title: { display: true, text: 'Annual Protests per 100k Citizens', color: '#94a3b8' },
+ grid: { color: '#1e293b' },
+ ticks: { color: '#64748b' }
+ }
+ }
+ }
+ });
+ }
 
-    function updateChart(mode) {
-      ['water', 'electricity', 'underspent'].forEach(m => {
-        const btn = document.getElementById(`btn-${m}`);
-        if (m === mode) {
-          btn.className = "px-3 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium";
-        } else {
-          btn.className = "px-3 py-1 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700";
-        }
-      });
+ function updateChart(mode) {
+ ['water', 'electricity', 'underspent'].forEach(m => {
+ const btn = document.getElementById(`btn-${m}`);
+ if (m === mode) {
+ btn.className = "px-3 py-1 text-xs rounded-lg bg-emerald-600 text-white font-medium";
+ } else {
+ btn.className = "px-3 py-1 text-xs rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700";
+ }
+ });
 
-      const expl = document.getElementById("chartExplanation");
-      if (mode === 'water') {
-        expl.innerHTML = "Water outages have an $R^2 = 0.7774$. In councils like Ditsobotla and Maluti-a-Phofung where over 40% of households lack reliable piped water, protest frequency reaches historic highs (> 7 strikes per 100k people).";
-      } else if (mode === 'electricity') {
-        expl.innerHTML = "Electricity interruptions have $r = +0.9089$. In councils experiencing municipal disconnection from Eskom due to municipal debt, outage frequency causes immediate road barricades and commercial disruption.";
-      } else {
-        expl.innerHTML = "Capital budget underspending ($r = +0.9329$) is the strongest individual predictor. Communities feel the deepest betrayal when grant billions are returned unspent to National Treasury while raw sewage floods their streets.";
-      }
+ const expl = document.getElementById("chartExplanation");
+ if (mode === 'water') {
+ expl.innerHTML = "Water outages have an $R^2 = 0.7774$. In councils like Ditsobotla and Maluti-a-Phofung where over 40% of households lack reliable piped water, protest frequency reaches historic highs (> 7 strikes per 100k people).";
+ } else if (mode === 'electricity') {
+ expl.innerHTML = "Electricity interruptions have $r = +0.9089$. In councils experiencing municipal disconnection from Eskom due to municipal debt, outage frequency causes immediate road barricades and commercial disruption.";
+ } else {
+ expl.innerHTML = "Capital budget underspending ($r = +0.9329$) is the strongest individual predictor. Communities feel the deepest betrayal when grant billions are returned unspent to National Treasury while raw sewage floods their streets.";
+ }
 
-      initChart(mode);
-    }
+ initChart(mode);
+ }
 
-    // Hypothesis Simulator Logic
-    function runSimulation() {
-      const water = parseFloat(document.getElementById("rng-water").value);
-      const power = parseFloat(document.getElementById("rng-power").value);
-      const budget = parseFloat(document.getElementById("rng-budget").value);
+ // Hypothesis Simulator Logic
+ function runSimulation() {
+ const water = parseFloat(document.getElementById("rng-water").value);
+ const power = parseFloat(document.getElementById("rng-power").value);
+ const budget = parseFloat(document.getElementById("rng-budget").value);
 
-      document.getElementById("lbl-water").innerText = `${water}%`;
-      document.getElementById("lbl-power").innerText = `${power} hrs`;
-      document.getElementById("lbl-budget").innerText = `${budget}%`;
+ document.getElementById("lbl-water").innerText = `${water}%`;
+ document.getElementById("lbl-power").innerText = `${power} hrs`;
+ document.getElementById("lbl-budget").innerText = `${budget}%`;
 
-      // Empirical linear model based on OLS
-      const predictedProtests = (0.082 * water) + (0.024 * power) + (0.055 * budget) - 0.95;
-      const clampedProtests = Math.max(0.15, predictedProtests);
+ // Empirical linear model based on OLS
+ const predictedProtests = (0.082 * water) + (0.024 * power) + (0.055 * budget) - 0.95;
+ const clampedProtests = Math.max(0.15, predictedProtests);
 
-      const violenceProbability = Math.min(95, Math.max(25, 30 + (clampedProtests * 8.5)));
+ const violenceProbability = Math.min(95, Math.max(25, 30 + (clampedProtests * 8.5)));
 
-      document.getElementById("sim-protest-score").innerText = clampedProtests.toFixed(2);
-      document.getElementById("sim-violence-bar").style.width = `${violenceProbability}%`;
-      document.getElementById("sim-violence-pct").innerText = `${Math.round(violenceProbability)}% Probability`;
+ document.getElementById("sim-protest-score").innerText = clampedProtests.toFixed(2);
+ document.getElementById("sim-violence-bar").style.width = `${violenceProbability}%`;
+ document.getElementById("sim-violence-pct").innerText = `${Math.round(violenceProbability)}% Probability`;
 
-      const rec = document.getElementById("sim-recommendation");
-      if (clampedProtests > 5.0) {
-        rec.innerHTML = "🚨 <strong>Critical Crisis Zone:</strong> Immediate danger of civil unrest and municipal building burnings. Urgent intervention required by provincial CoGTA.";
-        rec.className = "text-xs p-2.5 rounded-lg bg-rose-950/40 border border-rose-800/80 text-rose-300";
-      } else if (clampedProtests > 2.0) {
-        rec.innerHTML = "⚠️ <strong>High Risk Zone:</strong> Frequent service delivery marches likely. Ensure regular public briefing on water restoration and contractor payments.";
-        rec.className = "text-xs p-2.5 rounded-lg bg-amber-950/40 border border-amber-800/80 text-amber-300";
-      } else {
-        rec.innerHTML = "✅ <strong>Stable Baseline:</strong> Grievances are primarily handled through ward councilor meetings and petitions without road closures.";
-        rec.className = "text-xs p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-800/80 text-emerald-300";
-      }
-    }
+ const rec = document.getElementById("sim-recommendation");
+ if (clampedProtests > 5.0) {
+ rec.innerHTML = " <strong>Critical Crisis Zone:</strong> Immediate danger of civil unrest and municipal building burnings. Urgent intervention required by provincial CoGTA.";
+ rec.className = "text-xs p-2.5 rounded-lg bg-rose-950/40 border border-rose-800/80 text-rose-300";
+ } else if (clampedProtests > 2.0) {
+ rec.innerHTML = "️ <strong>High Risk Zone:</strong> Frequent service delivery marches likely. Ensure regular public briefing on water restoration and contractor payments.";
+ rec.className = "text-xs p-2.5 rounded-lg bg-amber-950/40 border border-amber-800/80 text-amber-300";
+ } else {
+ rec.innerHTML = " <strong>Stable Baseline:</strong> Grievances are primarily handled through ward councilor meetings and petitions without road closures.";
+ rec.className = "text-xs p-2.5 rounded-lg bg-emerald-950/40 border border-emerald-800/80 text-emerald-300";
+ }
+ }
 
-    // Initial run
-    renderTable(municipalData);
-    initChart('water');
-    runSimulation();
-  </script>
+ // Initial run
+ renderTable(municipalData);
+ initChart('water');
+ runSimulation();
+ </script>
 </body>
 </html>

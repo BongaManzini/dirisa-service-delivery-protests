@@ -47,7 +47,7 @@ def linear_regression(x, y):
 def main():
     records = load_data()
     print("=" * 72)
-    print("📊 DIRISA DATATHON RESEARCH REPORT")
+    print(" DIRISA DATATHON RESEARCH REPORT")
     print("Topic: Does Strikes/Public Protest Have a Relation With Service Delivery?")
     print(f"Municipalities Sampled: {len(records)} Metros & Critical Local Municipalities")
     print("=" * 72)
@@ -68,7 +68,7 @@ def main():
         ("Refuse Uncollected %", refuse_backlog, "Municipal waste collection backlog"),
     ]
     
-    print("\n🔍 1. CORRELATION WITH PROTEST FREQUENCY (Per 100,000 Citizens):")
+    print("\n 1. CORRELATION WITH PROTEST FREQUENCY (Per 100,000 Citizens):")
     print(f"{'Service Delivery Metric':<32} | {'Pearson (r)':<11} | {'R-squared':<10} | {'Impact'}")
     print("-" * 72)
     
@@ -78,7 +78,7 @@ def main():
         impact = "Strong Positive" if r > 0.7 else ("Moderate Positive" if r > 0.4 else "Weak")
         print(f"{name:<32} | r = {r:+.4f}  | R² = {r2:.4f}  | {impact}")
     
-    print("\n🔥 2. CATALYST FOR VIOLENCE (Correlation with % of Protests Turning Violent):")
+    print("\n 2. CATALYST FOR VIOLENCE (Correlation with % of Protests Turning Violent):")
     r_water_violent = pearson_r(water_backlog, violent_pct)
     r_sanitation_violent = pearson_r(sanitation_backlog, violent_pct)
     r_elec_violent = pearson_r(electricity_hours, violent_pct)
@@ -86,7 +86,7 @@ def main():
     print(f"  • Sanitation vs Violence:         r = {r_sanitation_violent:+.4f} (High dignity grievance)")
     print(f"  • Electricity vs Violence:        r = {r_elec_violent:+.4f} (High anger, often blocked roads)")
 
-    print("\n💡 3. CORE EMPIRICAL FINDINGS:")
+    print("\n 3. CORE EMPIRICAL FINDINGS:")
     print("  1. YES, THERE IS A MEASURABLE, STATISTICALLY SIGNIFICANT RELATIONSHIP:")
     print("     Municipalities with water and sanitation failure rates exceeding 30%")
     print("     experience over 4.5x more public strikes per capita compared to the national baseline.")
