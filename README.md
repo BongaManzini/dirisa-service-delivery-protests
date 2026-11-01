@@ -67,3 +67,9 @@ Student collaboration is very welcome! If you want to add more municipal wards, 
 2. Create your branch (`git checkout -b feature/new-municipal-data`).
 3. Commit your changes with clear messages (`git commit -m "feat: add Emalahleni coal-belt strike data"`).
 4. Push to your branch and open a Pull Request!
+
+---
+
+<div align="center">
+  <sub>© 2026 StrikePulse SA™ • Municipal Backlog & Protest Correlation Analytics • Platform Architecture & Engineering by <strong>Bonga Manzini</strong> • <a href="https://github.com/BongaManzini/dirisa-service-delivery-protests">GitHub Repository</a></sub>
+</div>
